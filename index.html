@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fibonacci - Calculadora</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <main class="container">
+    <h1>Calculadora de Fibonacci</h1>
+    <p>Ingresa <strong>n</strong> para obtener el n-ésimo número de Fibonacci (F(0)=0, F(1)=1).</p>
+
+    <form id="fib-form" class="card" novalidate>
+      <label for="n">Valor de n (entero ≥ 0):</label>
+      <input id="n" name="n" type="number" min="0" step="1" placeholder="Ej: 100" required />
+      <button type="submit">Calcular</button>
+      <p class="hint">Consejo: prueba con números grandes (p. ej., 1000). La función es muy rápida.</p>
+      <p id="error" class="error" aria-live="polite"></p>
+    </form>
+
+    <section id="resultado" class="result" hidden>
+      <h2>Resultado</h2>
+      <div class="result-row">
+        <span class="label">n:</span>
+        <span id="out-n" class="value"></span>
+      </div>
+      <div class="result-row">
+        <span class="label">F(n):</span>
+        <textarea id="out-fn" class="value mono" readonly></textarea>
+      </div>
+      <div class="result-row">
+        <span class="label">Longitud (dígitos):</span>
+        <span id="out-len" class="value"></span>
+      </div>
+      <button id="copy-btn" type="button">Copiar F(n)</button>
+      <p id="copy-msg" class="ok" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
